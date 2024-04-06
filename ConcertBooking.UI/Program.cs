@@ -2,6 +2,8 @@ using ConcertBooking_Repository;
 using ConcertBooking_Repository.Implementations;
 using ConcertBooking_Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using ConcertBooking_Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +13,17 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("ConcertBooking_UI")));
 
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddScoped<IVenueRepo, VenueRepo>();
 builder.Services.AddScoped<IArtistRepo, ArtistRepo>();
 builder.Services.AddScoped<IConcertRepo, ConcertRepo>();
 builder.Services.AddScoped<IUtilityRepo, UtilityRepo>();
 builder.Services.AddScoped<ITicketRepo, TicketRepo>();
+
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -39,4 +46,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapRazorPages();
 app.Run();
