@@ -1,0 +1,23 @@
+﻿@model HomeConcertDetailsViewModel
+
+<div class="row">
+    <div class="col-6" style="margin-top: 6rem;">
+        <img src="@Model.ConcertImage" alt="Concert Image" width="500" height="330" />
+    </div>
+
+    <div class="col-6" style="margin-top: 6rem;">
+        <div>Concert Name : @Model.ConcertName</div>
+        <div hidden>Concert Id : @Model.ConcertId</div>
+        <div>Concert Description : @Model.Description</div>
+        <div>Venue Name : @Model.VenueName</div>
+        <div>Venue Address : @Model.VenueAddress</div>
+        <div>Date & Time : @Model.ConcertDateTime.ToString("MMM dd yyyy hh:mm")</div>
+        <div class="mt-2"><img src="@Model.ArtistImage" class="rounded-circle img-fluid" style="height:150px; width:150px;" /></div>
+        <div>Artist Name : @Model.ArtistName</div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
