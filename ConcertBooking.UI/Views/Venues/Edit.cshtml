@@ -4,11 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit Venue</h1>
-
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin-top:5rem;">
+        <h2>Edit Venue</h2>
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -31,7 +29,7 @@
                 <input asp-for="SeatCapacity" class="form-control" />
                 <span asp-validation-for="SeatCapacity" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-1">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

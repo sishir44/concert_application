@@ -4,11 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
-@* <h1>Edit Artist</h1>
-
-<hr /> *@
 <div class="row">
-    <div class="col-12" style="margin-top: 5rem;">
+    <div class="col-12" style="margin-top:5rem;">
         <h2>Edit Artist</h2>
     </div>
     <div class="col-4 mt-4">
@@ -38,7 +35,7 @@
                 <input asp-for="ChooseImage" class="form-control" />
                 <span asp-validation-for="ChooseImage" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-1">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

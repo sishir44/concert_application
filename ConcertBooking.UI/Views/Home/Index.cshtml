@@ -6,9 +6,9 @@
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-3 mb-2">
-            <div class="card" style="height:25rem; margin-top:5rem;" >
-                <img src="@item.ConcertImage" class="card-img-top" alt="Card Image Cap">
+        <div class="col-3 mb-2" style="margin-top:5rem;">
+            <div class="card" >
+                <img src="@item.ConcertImage" class="card-img-top" alt="Card Image Cap" width="550" height="230">
                 <div class="card-body">
                     <h5 class="card-title">@item.ConcertName</h5>
                     <h5 class="card-title">@item.ArtistName</h5>

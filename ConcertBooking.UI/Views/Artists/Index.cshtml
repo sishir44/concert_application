@@ -4,15 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="row">
-    <div class="col-12" style="margin-top: 4rem;">
-        <h2>Artist List</h2>
-    </div>
+<div class="col-6" style="margin-top:5rem;">
+    <h2>Artist List</h2>
+    <p>
+        <a asp-action="Create" class="btn btn-info mt-1">Create New Artist</a>
+    </p>
 </div>
 
-<p>
-    <a asp-action="Create" class="btn btn-info mt-4">Create New Artist</a>
-</p>
 <table class="table">
     <thead>
         <tr>

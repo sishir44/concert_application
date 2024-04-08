@@ -21,7 +21,7 @@ namespace ConcertBooking_Repository.Implementations
             _userManager = userManager;
             _roleManager = roleManager;
         }
-
+         
         public Task Seed()
         {
             if (!_roleManager.RoleExistsAsync(GlobalConfiguration.Admin_Role).GetAwaiter().GetResult())
@@ -31,10 +31,10 @@ namespace ConcertBooking_Repository.Implementations
                 var user = new ApplicationUser
                 {
                     Email = "admin@gmail.com",
-                    UserName = "admin",
+                    UserName = "admin@gmail.com",
                     //EmailConfirmed = true,
                 };
-                _userManager.CreateAsync(user, "password").GetAwaiter().GetResult();
+                _userManager.CreateAsync(user, "Password@1").GetAwaiter().GetResult();
                 _userManager.AddToRoleAsync(user, GlobalConfiguration.Admin_Role).GetAwaiter().GetResult();
 
             }

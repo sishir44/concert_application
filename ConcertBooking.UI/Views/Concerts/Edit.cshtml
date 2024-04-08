@@ -4,12 +4,12 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit Concert</h1>
-
-<hr />
 <div class="row">
-    <div class=" col-4">
-        <img src="@Model.ImageUrl" width="200" height="200" />
+    <div class="col-12" style="margin-top:5rem;">
+        <h2>Edit Concert</h2>
+    </div>
+    <div class="col-4 mt-4">
+        <img src="@Model.ImageUrl" width="320" height="310" />
     </div>
     <div class="col-8">
         <form asp-action="Edit" enctype="multipart/form-data">
@@ -53,8 +53,8 @@
                 </select>
                 <span asp-validation-for="ArtistId" class="text-danger"></span>
             </div>
-            
-            <div class="form-group">
+
+            <div class="form-group mt-1">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -66,5 +66,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
