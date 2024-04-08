@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 //Authentication Process: Register IdentityUser class - Id(Guid), UserName, Password, Email, Phone
 // SignInManager - check whether user SignIn or not
 // UserManager - store user data in dbs, get user info from dbs, add role to user
+// IdentityRole has 4 property eg: Id, Name
 
 namespace ConcertBooking_Entities
 {

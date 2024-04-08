@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConcertBooking_Entities\ConcertBooking_Entities.csproj" />
+    <ProjectReference Include="..\ConcertBooking_Infrastructure\ConcertBooking_Infrastructure.csproj" />
   </ItemGroup>
 
 	<ItemGroup>

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcertBooking_Repository",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConcertBooking_UI", "ConcertBooking.UI\ConcertBooking_UI.csproj", "{B3127454-55AB-48E5-8F6F-429BD5F53B91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertBooking_Infrastructure", "ConcertBooking_Infrastructure\ConcertBooking_Infrastructure.csproj", "{D08BCBBB-1FDA-4211-93A2-383EE5FED282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B3127454-55AB-48E5-8F6F-429BD5F53B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3127454-55AB-48E5-8F6F-429BD5F53B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3127454-55AB-48E5-8F6F-429BD5F53B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D08BCBBB-1FDA-4211-93A2-383EE5FED282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D08BCBBB-1FDA-4211-93A2-383EE5FED282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D08BCBBB-1FDA-4211-93A2-383EE5FED282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D08BCBBB-1FDA-4211-93A2-383EE5FED282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

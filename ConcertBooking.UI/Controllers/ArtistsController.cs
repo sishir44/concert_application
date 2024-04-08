@@ -2,10 +2,12 @@
 using ConcertBooking_Repository;
 using ConcertBooking_Repository.Interfaces;
 using ConcertBooking_UI.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConcertBooking.UI.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class ArtistsController : Controller
     {
         private readonly IArtistRepo _artistRepo;
