@@ -39,6 +39,12 @@
                 <a class="dropdown-item" href="#">Separated link</a>
                 </div>
                 </li> *@
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Tickets" asp-action="MyTickets">Tickets</a>
+                    </li>
+                }
 
             </ul>
 
