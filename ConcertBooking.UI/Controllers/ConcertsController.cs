@@ -17,15 +17,30 @@ namespace ConcertBooking.UI.Controllers
         private readonly IVenueRepo _venueRepo;
         private readonly IArtistRepo _artistRepo;
         private readonly IUtilityRepo _utilityRepo;
+        private readonly IBookingRepo _bookingRepo;
 
         private string containerName = "ConcertImage";
 
-        public ConcertsController(IConcertRepo concertRepo, IVenueRepo venueRepo, IArtistRepo artistRepo, IUtilityRepo utilityRepo)
+        private string GetUserNameWithoutDomain(string email)
+        {
+            int atIndex = email.IndexOf('@'); // Find the index of '@' symbol
+            if (atIndex != -1)
+            {
+                return email.Substring(0, atIndex); // If '@' symbol found, return the substring before '@'
+            }
+            else
+            {
+                return email; // If '@' symbol not found, return the original email
+            }
+        }
+
+        public ConcertsController(IConcertRepo concertRepo, IVenueRepo venueRepo, IArtistRepo artistRepo, IUtilityRepo utilityRepo, IBookingRepo bookingRepo)
         {
             _concertRepo = concertRepo;
             _venueRepo = venueRepo;
             _artistRepo = artistRepo;
             _utilityRepo = utilityRepo;
+            _bookingRepo = bookingRepo;
         }
 
         public async Task<IActionResult> Index()
@@ -121,6 +136,19 @@ namespace ConcertBooking.UI.Controllers
             var state = await _concertRepo.GetById(id);
             await _concertRepo.RemoveData(state);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetTickets(int id)
+        {
+            var bookings = await _bookingRepo.GetAll(id);
+            var vm = bookings.Select(a => new DashboadViewModel
+            {
+                UserName = GetUserNameWithoutDomain(a.User.UserName),
+                ConcertName = a.Concert.Name,
+                SeatNumber = string.Join(",", a.Tickets.Select(t=>t.SeatNumber))
+            }).ToList();
+            return View(vm);
         }
     }
 }

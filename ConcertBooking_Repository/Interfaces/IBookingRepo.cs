@@ -10,5 +10,6 @@ namespace ConcertBooking_Repository.Interfaces
     public interface IBookingRepo
     {
         Task AddBooking(Booking booking);
+        Task <IEnumerable<Booking>> GetAll(int ConcertId);
     }
 }
