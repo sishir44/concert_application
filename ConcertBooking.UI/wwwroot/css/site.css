@@ -65,3 +65,7 @@ body {
         display: none !important;
     }
 }
+
+.loginPage a {
+    margin-right: 6rem; 
+}
