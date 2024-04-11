@@ -9,8 +9,8 @@
 
 3. Go to the terminal and write the below command for migration:
     ```bash
-    dotnet ef migrations add addInitialization
-    dotnet ef database update
+    dotnet ef migrations add addInitialization OR add-migration addInitialization
+    dotnet ef database update OR update-database
     ```
 
 4. Build and run the project.
