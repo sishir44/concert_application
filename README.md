@@ -5,7 +5,7 @@
     git clone repository_link
     ```
 
-2. Check and verify ConnectionString, Server, and Database Name.
+2. Check and verify ConnectionString, Server, and Database Name and Set as StartUp Project as ConcertBooking_UI
 
 3. Go to the terminal and write the below command for migration:
     ```bash
